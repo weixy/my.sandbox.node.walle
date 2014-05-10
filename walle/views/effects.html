@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Effects with Angular Bootstrap</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="/javascripts/angular/angular.1.2.4.js"></script>
+    <script src="/javascripts/angular/ui-bootstrap-tpls-0.11.0.js"></script>
+    <script src="/app/js/effects/tmpcontroller.js"></script>
+</head>
+<body>
+    <div ng-app="TmptApp">
+        <tabset>
+            <tab heading="Temperature">
+                <div class="container" ng-controller="TmpCtrl">
+                    <div class="temperatureNumber" style="background-color:{{temp.temperature.bkcolor}};">
+                        <div class="number">&nbsp;{{temp.temperature.degree}}&deg;</div>
+                        <div class="buttons" ng-controller="ButtonsCtrl">
+                            <div class="mybutton" style="color:{{temp.temperature.bkcolor}};" decrease-temp>-</div>
+                            <div class="mybutton" style="color:{{temp.temperature.bkcolor}};" increase-temp>+</div>
+                        </div>
+                    </div>
+                </div>
+            </tab>
+            <tab heading="To be continued ...">... ... ...</tab>
+        </tabset>
+    </div>
+</body>
+</html>

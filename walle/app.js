@@ -33,6 +33,8 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/sample', routes.sample);
+app.get('/photowall', routes.photowall);
+app.get('/effects', routes.effects);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
