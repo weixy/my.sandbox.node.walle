@@ -37,14 +37,23 @@ a {
 }
 
 .container {
-    width: 250px;
+    width: 650px;
     margin-top: 10px;
     float: left;
 }
 
 .temperatureNumber {
+    width: 200px;
     padding-top: 20px;
     padding-bottom: 50px;
+    display: block;
+    float: left;
+}
+
+.weatherboard {
+    float: left;
+    width: 400px;
+    display: inline-block;
 }
 
 .number {
@@ -60,4 +69,21 @@ a {
     -ms-user-select: none;
     user-select: none;
     cursor: default;
+}
+
+.cityitem {
+    height: 20px;
+    list-style-type: none;
+}
+
+.fb_buttons {
+    width: 400px;
+}
+
+.fb_message {
+    width: 400px;
+}
+
+#status {
+    display: inline-block;
 }

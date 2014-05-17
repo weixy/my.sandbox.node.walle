@@ -7,11 +7,26 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <script src="/javascripts/angular/angular.1.2.4.js"></script>
     <script src="/javascripts/angular/ui-bootstrap-tpls-0.11.0.js"></script>
-    <script src="/app/js/effects/tmpcontroller.js"></script>
+    <script src="/app/js/effects/tmpctrl.js"></script>
+    <script src="/app/js/effects/fb.js"></script>
 </head>
 <body>
     <div ng-app="TmptApp">
         <tabset>
+            <tab heading="Facebook">
+                <div id="fb-root"></div>
+                <div class="fb_message">
+                    <fb:login-button id="fb_login_butn" scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+                    <div id="status"></div>
+                </div>
+                <div class="fb_sharing">
+                    <div class="fb-post" data-href="https://www.facebook.com/adventurecyclesnz/posts/242122175971409" data-width="400"></div>
+                </div>
+                <div class="fb_buttons">
+                    <div class="fb-like" data-href="https://www.facebook.com/adventurecyclesnz/posts/242122175971409" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+                    <div class="fb-follow" data-href="https://www.facebook.com/adventurecyclesnz/posts/242122175971409" data-colorscheme="light" data-layout="standard" data-show-faces="true"></div>
+                </div>
+            </tab>
             <tab heading="Temperature">
                 <div class="container" ng-controller="TmpCtrl">
                     <div class="temperatureNumber" style="background-color:{{temp.temperature.bkcolor}};">
@@ -20,6 +35,13 @@
                             <div class="mybutton" style="color:{{temp.temperature.bkcolor}};" decrease-temp>-</div>
                             <div class="mybutton" style="color:{{temp.temperature.bkcolor}};" increase-temp>+</div>
                         </div>
+                    </div>
+                    <div class="weatherboard">
+                        <ul id="cities" class="citylist">
+                            <li class="cityitem" ng-repeat="city in cities">
+                                <span>{{city.name}}</span><span>{{city.weather.current_condition[0].temp_C}}</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </tab>
